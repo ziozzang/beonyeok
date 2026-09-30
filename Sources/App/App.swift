@@ -163,6 +163,7 @@ final class ServerController: ObservableObject {
 @main
 enum Main {
     static func main() {
+        Updater.handleCommandLineIfRequested()   // `--update [--check]`
         if CommandLine.arguments.contains("--serve") { Headless.run() } else { TranslateAPIApp.main() }
     }
 }
